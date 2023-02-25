@@ -5,6 +5,7 @@ using System.IO;
 using System.Text.Json;
 using Newtonsoft.Json;
 using Malaysia_states.Model;
+using Microsoft.AspNetCore.Cors;
 
 namespace Malaysia_states.Controllers
 {
@@ -21,7 +22,9 @@ namespace Malaysia_states.Controllers
             _hostingEnvironment= hostingEnvironment;
         }
 
+        [EnableCors]
         [Obsolete]
+        [HttpGet]
         public rootStateDetails? GetState()
         {
             var rootPath = _hostingEnvironment.ContentRootPath;
