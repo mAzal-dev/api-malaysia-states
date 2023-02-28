@@ -24,7 +24,7 @@ namespace Malaysia_states.Controllers
 
         [EnableCors]
         [Obsolete]
-        [HttpGet]
+        [HttpGet(Name = "GetState")]
         public rootStateDetails? GetState()
         {
             var rootPath = _hostingEnvironment.ContentRootPath;
